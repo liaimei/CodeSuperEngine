@@ -1,0 +1,80 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.liaimei.CodeSuperEngine</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>CodeSuperEngine</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="liaimei654@163.com" url="https://github.com/liaimei">liaimei</vendor>
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>
+        <![CDATA[
+            Code Super Engine
+            <h3>English:</h3>
+            <ul>
+              <li>Super Code Engine</li>
+              <li>support for java and kotlin super code tools</li>
+              <li>Supports camel-on word selection</li>
+              <li>Provides syntax support for the DTO language of the Jimmer framework</li>
+              <li>Provides legal detection of hardcoded strings of Jimmer entity interfaces, and supports Java and Kotlin</li>
+            </ul>
+            <h3>中文:</h3>
+            <ul>
+              <li>超级代码引擎</li>
+              <li>支持java和kotlin的超级代码工具</li>
+              <li>支持驼峰式单词选择</li>
+              <li>为Jimmer框架的DTO语言提供语法支持</li>
+              <li>为Jimmer实体接口的硬编码字符串提供合法检测，支持Java、Kotlin</li>
+            </ul>
+        ]]>
+    </description>
+    <change-notes>
+        <![CDATA[
+            <p><b>0.0.2</b></p>
+            <ul>
+              <li>Support for Jimmer Framework, DTO language creation and editing, as well as syntax hints</li>
+            </ul>
+            <ul>
+              <li>支持jimmer框架dto语言创建和编辑，以及语法提示</li>
+            </ul>
+            <p><b>0.0.1</b></p>
+            <ul>
+              <li>Plugin published</li>
+              <li>Toggle the editor's camelCase word selection setting: shortcut Control+Shift+J (Mac platform Shift+Meta+J</li>
+            </ul>
+            <ul>
+              <li>插件发布了</li>
+              <li>切换编辑器的驼峰式单词选择设置:快捷键Control+Shift+J(mac平台Shift+Meta+J)</li>
+            </ul>
+        ]]>
+    </change-notes>
+
+    <!-- Product and plugin compatibility requirements.Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.database</depends>
+    <depends>com.intellij.spring</depends>
+    <depends>com.intellij.spring.boot</depends>
+    <depends>org.intellij.intelliLang</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+
+    </extensions>
+
+
+    <applicationListeners>
+        <!--快速切换驼峰式单词选择-->
+        <listener class="com.liaimei.supercodeengine.camelwords.CamelWordsListener"
+                  topic="com.intellij.openapi.application.ApplicationActivationListener"/>
+    </applicationListeners>
+</idea-plugin>

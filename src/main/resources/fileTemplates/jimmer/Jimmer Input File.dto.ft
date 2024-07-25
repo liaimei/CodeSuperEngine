@@ -1,0 +1,8 @@
+#if (${ENTITYPACKAGE} && ${ENTITYPACKAGE} != "")export ${PACKAGE_NAME}
+    #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")-> package ${PACKAGE_NAME}#end
+#end
+
+
+input ${NAME}Input {
+    #allScalars
+}

@@ -1,0 +1,17 @@
+#if (${ENTITYPACKAGE} && ${ENTITYPACKAGE} != "")export ${PACKAGE_NAME}
+    #if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")-> package ${PACKAGE_NAME}#end
+#end
+
+
+#parse("File Header.dto")
+${NAME}View {
+    #allScalars
+}
+
+input ${NAME}Input {
+    #allScalars
+}
+
+specification ${NAME}Specification {
+    #allScalars
+}
